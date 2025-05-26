@@ -2,6 +2,52 @@
 
 Herbal Heaven is a full-stack e-commerce platform for selling herbal products, built with Node.js, Express, MongoDB, and Materialize CSS.
 
+
+## 🐳 Docker Instructions
+
+To run this application in a Docker container:
+
+### ✅ Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/munnokd/Herbal_heaven_docker.git
+cd Herbal_heaven_docker
+```
+
+### ✅ Step 2: Build the Docker Image
+
+```bash
+docker build -t herbal-heaven-app .
+```
+
+### ✅ Step 3: Run the Docker Container
+
+```bash
+docker run -p 3000:3000 herbal-heaven-app
+```
+
+---
+
+## 🌐 Accessing the App
+
+After running the container, open your browser and navigate to:
+
+- **Main App**: [http://localhost:3000](http://localhost:3000)
+- **Student API Endpoint**: [http://localhost:3000/api/student](http://localhost:3000/api/student)
+
+---
+
+## 🎓 API Identity Endpoint
+
+To verify the individual contribution, this Dockerised app includes a REST API route at `/api/student` that returns the following JSON:
+
+```json
+{
+  "name": "Kalp Prajapati",
+  "studentId": "224834542"
+}
+```
+
 ## Features
 
 - **User Authentication**
