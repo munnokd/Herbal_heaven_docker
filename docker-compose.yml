@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: herbalheaven_app
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb+srv://kalp2002prajapati:SbjvllYj1oo6osxn@cluster0.xfojzlh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    networks:
+      - herbal_net
+
+  test:
+    build: .
+    container_name: herbalheaven_test
+    command: ["npm", "test"]
+    depends_on:
+      - app
+    environment:
+      - MONGO_URI=mongodb+srv://kalp2002prajapati:SbjvllYj1oo6osxn@cluster0.xfojzlh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    networks:
+      - herbal_net
+
+networks:
+  herbal_net:
